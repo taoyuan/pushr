@@ -21,8 +21,8 @@
     "url": "https://github.com/taoyuan/pushr/issues"
   },
   "dependencies": {
-    "faye": "~0.8.9",
-    "eventemitter2": "~0.4.13"
+    "faye": "latest",
+    "eventemitter2": "latest"
   },
   "devDependencies": {
     "mocha": "~1.12.0",

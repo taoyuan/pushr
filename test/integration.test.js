@@ -1,6 +1,7 @@
 var expect = require('expect.js');
 var Pushr = require('../');
-var Faye = require('faye');
+var http = require('http');
+var faye = require('faye');
 var async = require('async');
 
 describe('Pushr', function () {
@@ -67,14 +68,17 @@ describe('Pushr', function () {
 
     describe('Server and Client', function () {
 
-        var bayeux, pushr;
+        var server, bayeux, pushr;
 
         var port = Math.floor(Math.random() * 5e4 + 1e4);
 
         beforeEach(function (done) {
 
-            bayeux = new Faye.NodeAdapter({mount: '/faye', timeout: 45});
-            bayeux.listen(port, null, function () {
+            server = http.createServer();
+            bayeux = new faye.NodeAdapter({mount: '/faye', timeout: 45});
+
+            bayeux.attach(server);
+            server.listen(port, function () {
                 pushr = new Pushr('http://127.0.0.1:' + port + '/faye');
                 done();
             });
@@ -82,7 +86,7 @@ describe('Pushr', function () {
 
         afterEach(function (done) {
             pushr.disconnect();
-            bayeux.stop(done);
+            server.close(done);
         });
 
         it('should channel publish', function (done) {
