@@ -1,6 +1,6 @@
 {
   "name": "pushr",
-  "version": "0.0.1-1",
+  "version": "0.0.2",
   "description": "A Realtime Message library based on faye for nodejs and browser",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,12 @@
   "devDependencies": {
     "mocha": "~1.12.0",
     "expect.js": "~0.2.0",
-    "async": "~0.2.9"
+    "async": "~0.2.9",
+    "browserify": "~2.35.1",
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.7",
+    "grunt-karma": "~0.4.4",
+    "grunt-browserify": "~1.2.11",
+    "grunt-contrib-uglify": "~0.1.2"
   }
 }
