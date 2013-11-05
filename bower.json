@@ -1,0 +1,17 @@
+{
+  "name": "pushr",
+  "main": "browser/pushr.js",
+  "version": "0.0.2",
+  "homepage": "https://github.com/taoyuan/pushr",
+  "authors": [
+    "taoyuan <taoyuan@oyo.im>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
